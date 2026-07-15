@@ -61,14 +61,3 @@ function revertCard(event) {
     }
   }
 }
-
-function initTetroPreview() {
-  const frame = showcase.querySelector(".project_link");
-
-  frame.onclick = (event) => {
-    event.preventDefault();
-    window.open("https://codepen.io/NikFroly/full/MYJGVEp", "_blank");
-  }
-}
-
-initTetroPreview();
