@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" stroke="black" stroke-width="6px" stroke-linecap="square">
+  <circle r="50" cx="55" cy="55" stroke="white"/>
+  <circle r="46" cx="55" cy="55" fill="white"/>
+  <line x1="25" y1="55" x2="35" y2="15"/>
+  <line x1="35" y1="15" x2="55" y2="55"/>
+  <line x1="45" y1="95" x2="65" y2="15"/>
+  <line x1="55" y1="55" x2="85" y2="55"/>
+  <line x1="84" y1="57" x2="52" y2="75"/>
+</svg>
