@@ -4,11 +4,30 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Nikita Perminov</title>
+		<script>
+			const START_TIME = Date.now(),
+				LOGO_ANIM_TIME = 3500;
+
+			function hideIntro() {
+				intro.classList.remove("wait");
+				intro.classList.add("hide");
+				document.body.classList.add("scrollable");
+			}
+
+			window.addEventListener(
+				"load",
+				() => {
+					const TIME_LEFT = LOGO_ANIM_TIME - (Date.now() - START_TIME);
+					TIME_LEFT > 0 ? setTimeout(hideIntro, TIME_LEFT) : hideIntro();
+				},
+				{ once: true }
+			);
+		</script>
 		<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 		<link rel="stylesheet" type="text/css" href="main.css">
 	</head>
 	<body>
-		<div class="intro">
+		<div id="intro" class="wait">
 			<svg class="intro_left-side" viewBox="0 0 100 100">
 				<polygon points="-100,-100 101,-100 0,200 -100,200"/>
 				<defs>
@@ -114,7 +133,7 @@
 			<section id="home">
 				<div class="content">
 					<div class="content_header">
-						<img src="img/mascot.gif">
+						<img loading="lazy" alt="mascot" src="img/mascot.gif">
 						<h1>NIKITA PERMINOV</h1>
 						<p>NikFroly@gmail.com</p>
 					</div>
@@ -128,9 +147,7 @@
 					</div>
 					<div class="content_main">
 						<div class="step">
-							<div class="step_icon">
-								<img src="img/iconMOD.svg" alt="Gear and wrench">
-							</div>
+							<img class="step_icon" loading="lazy" alt="Gear and wrench" src="img/iconMOD.svg">
 							<div class="step_text">
 								<h4>
 									<span>Modding</span>
@@ -153,9 +170,7 @@
 							</div>
 						</div>
 						<div class="step">
-							<div class="step_icon">
-								<img src="img/iconScratch.svg" alt="Scratch mascot">
-							</div>
+							<img class="step_icon" loading="lazy" alt="Scratch mascot" src="img/iconScratch.svg">
 							<div class="step_text">
 								<h4>
 									<span>Scratch</span>
@@ -173,9 +188,7 @@
 							</div>
 						</div>
 						<div class="step">
-							<div class="step_icon">
-								<img src="img/iconWWW.svg" alt="World Wide Web icon">
-							</div>
+							<img class="step_icon" loading="lazy" alt="World Wide Web icon" src="img/iconWWW.svg">
 							<div class="step_text">
 								<h4>
 									<span>Web</span>
@@ -193,9 +206,7 @@
 							</div>
 						</div>
 						<div class="step">
-							<div class="step_icon">
-								<img src="img/iconSDL.svg" alt="Simple Directmedia Layer icon">
-							</div>
+							<img class="step_icon" loading="lazy" alt="Simple Directmedia Layer icon" src="img/iconSDL.svg">
 							<div class="step_text">
 								<h4>
 									<span>My game engine</span>
@@ -217,9 +228,7 @@
 							</div>
 						</div>
 						<div class="step">
-							<div class="step_icon">
-								<img src="img/iconUE.svg" alt="Unreal Engine icon">
-							</div>
+							<img class="step_icon" loading="lazy" alt="Unreal Engine icon" src="img/iconUE.svg">
 							<div class="step_text">
 								<h4>
 									<span>Unreal</span>
@@ -249,22 +258,17 @@
 					</div>
 					<div class="content_main">
 						<div class="card" onclick="revertCard(event)">
-							<div class="card_back">
-								<svg viewBox="0 0 180 252">
-									<circle r="46" cx="90" cy="126" fill="none"/>
-									<line x1="60" y1="126" x2="70" y2="86"/>
-									<line x1="70" y1="86" x2="90" y2="126"/>
-									<line x1="80" y1="166" x2="100" y2="86"/>
-									<line x1="90" y1="126" x2="120" y2="126"/>
-									<line x1="119" y1="128" x2="87" y2="146"/>
-								</svg>
-							</div>
+							<svg class="card_back" viewBox="0 0 180 252">
+								<circle r="46" cx="90" cy="126" fill="none"/>
+								<line x1="60" y1="126" x2="70" y2="86"/>
+								<line x1="70" y1="86" x2="90" y2="126"/>
+								<line x1="80" y1="166" x2="100" y2="86"/>
+								<line x1="90" y1="126" x2="120" y2="126"/>
+								<line x1="119" y1="128" x2="87" y2="146"/>
+							</svg>
 							<div class="card_front">
 								<div class="project_platform">PC</div>
-								<video class="project_preview" autoplay muted loop>
-									<source src="video/memory.webm" type="video/webm">
-									<source src="video/memory.mp4" type="video/mp4">
-								</video>
+								<img class="project_preview" loading="lazy" alt="Memory gameplay" src="img/memory.gif">
 								<div class="project_info">
 									<p class="info_title">Memory</p>
 									<p class="info_decription">
@@ -286,23 +290,17 @@
 							</div>
 						</div>
 						<div class="card highlight" onclick="revertCard(event)">
-							<div class="card_back">
-								<svg viewBox="0 0 180 252">
-									<circle r="46" cx="90" cy="126" fill="none"/>
-									<line x1="60" y1="126" x2="70" y2="86"/>
-									<line x1="70" y1="86" x2="90" y2="126"/>
-									<line x1="80" y1="166" x2="100" y2="86"/>
-									<line x1="90" y1="126" x2="120" y2="126"/>
-									<line x1="119" y1="128" x2="87" y2="146"/>
-								</svg>
-							</div>
+							<svg class="card_back" viewBox="0 0 180 252">
+								<circle r="46" cx="90" cy="126" fill="none"/>
+								<line x1="60" y1="126" x2="70" y2="86"/>
+								<line x1="70" y1="86" x2="90" y2="126"/>
+								<line x1="80" y1="166" x2="100" y2="86"/>
+								<line x1="90" y1="126" x2="120" y2="126"/>
+								<line x1="119" y1="128" x2="87" y2="146"/>
+							</svg>
 							<div class="card_front">
 								<div class="project_platform">Web</div>
-								<video class="project_preview" autoplay muted loop>
-									<source src="video/tetromino.webm" type="video/webm">
-									<source src="video/tetromino.mp4" type="video/mp4">
-								</video>
-								<div class="project_link"></div>
+								<img class="project_preview" loading="lazy" alt="Tetromino gameplay" src="img/tetromino.gif">
 								<div class="project_info">
 									<p class="info_title">Tetromino</p>
 									<p class="info_decription">
@@ -325,29 +323,24 @@
 							</div>
 						</div>
 						<div class="card" onclick="revertCard(event)">
-							<div class="card_back">
-								<svg viewBox="0 0 180 252">
-									<circle r="46" cx="90" cy="126" fill="none"/>
-									<line x1="60" y1="126" x2="70" y2="86"/>
-									<line x1="70" y1="86" x2="90" y2="126"/>
-									<line x1="80" y1="166" x2="100" y2="86"/>
-									<line x1="90" y1="126" x2="120" y2="126"/>
-									<line x1="119" y1="128" x2="87" y2="146"/>
-								</svg>
-							</div>
+							<svg class="card_back" viewBox="0 0 180 252">
+								<circle r="46" cx="90" cy="126" fill="none"/>
+								<line x1="60" y1="126" x2="70" y2="86"/>
+								<line x1="70" y1="86" x2="90" y2="126"/>
+								<line x1="80" y1="166" x2="100" y2="86"/>
+								<line x1="90" y1="126" x2="120" y2="126"/>
+								<line x1="119" y1="128" x2="87" y2="146"/>
+							</svg>
 							<div class="card_front">
 								<div class="project_platform">PC</div>
-								<video class="project_preview" autoplay muted loop>
-									<source src="video/froly.webm" type="video/webm">
-									<source src="video/froly.mp4" type="video/mp4">
-								</video>
+								<img class="project_preview" loading="lazy" alt="Froly gameplay" src="img/froly.gif">
 								<div class="project_info">
 									<h4 class="info_title">Froly</h4>
 									<p class="info_decription">
 										My name is Nikita Perminov but everybody calls me Froly.
 									</p>
 									<p class="info_brief">
-										The project's concept is an interactive personal introduction in <cite>The Stanley Parable</cite> style. The goal is to improve Unreal Engine knowledge.
+										The project's concept is an interactive personal introduction in <cite>The Stanley Parable</cite> style. The goal is to improve <mark>Unreal Engine knowledge</mark>.
 									</p>
 								</div>
 								<div class="project_tags">
@@ -370,18 +363,16 @@
 				<div class="footer_text">
 					&copy; 2026 Nikita Perminov
 				</div>
-				<div class="footer_logo">
-					<svg viewBox="0 0 100 100" stroke-width="6px" stroke-linecap="square">
-						<circle r="46" cx="50" cy="50" fill="none"/>
-						<line x1="20" y1="50" x2="30" y2="10"/>
-						<line x1="30" y1="10" x2="50" y2="50"/>
-						<line x1="40" y1="90" x2="60" y2="10"/>
-						<line x1="50" y1="50" x2="80" y2="50"/>
-						<line x1="79" y1="52" x2="47" y2="70"/>
-					</svg>
-				</div>
+				<svg class="footer_logo" viewBox="0 0 100 100">
+					<circle r="46" cx="50" cy="50" fill="none"/>
+					<line x1="20" y1="50" x2="30" y2="10"/>
+					<line x1="30" y1="10" x2="50" y2="50"/>
+					<line x1="40" y1="90" x2="60" y2="10"/>
+					<line x1="50" y1="50" x2="80" y2="50"/>
+					<line x1="79" y1="52" x2="47" y2="70"/>
+				</svg>
 			</div>
 		</footer>
 	</body>
-	<script src="common.js"></script>
+	<script defer src="common.js"></script>
 </html>
