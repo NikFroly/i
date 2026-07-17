@@ -40,6 +40,7 @@ html {
   font: 14px/1.2 Arial, sans-serif;
   letter-spacing: 1px;
   color: var(--color-light-1);
+  background: var(--color-dark-1);
 }
 
 body {
@@ -218,10 +219,6 @@ main a:active {
 
 section:nth-child(odd) {
   background: var(--color-dark-2);
-}
-footer,
-section:nth-child(even) {
-  background: var(--color-dark-1);
 }
 .content {
   max-width: 1500px;
@@ -409,6 +406,7 @@ section > .content {
 .card_front {
   position: absolute;
   top: 0;
+  left: 0;
   transform: rotateY(180deg);
 }
 .project_platform {
