@@ -44,11 +44,12 @@ html {
 }
 
 body {
+  position: fixed;
+  width: 100%;
   margin: 0;
-	overflow: hidden;
 }
 body.scrollable {
-  overflow: auto;
+  position: static;
 }
 
 #intro,
@@ -406,7 +407,6 @@ section > .content {
 .card_front {
   position: absolute;
   top: 0;
-  left: 0;
   transform: rotateY(180deg);
 }
 .project_platform {
