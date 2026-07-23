@@ -203,6 +203,15 @@ header > .content {
 
 main {
   overflow: hidden;
+  --c1: var(--color-dark-1);
+  --c2: #161616;
+  --c3: #040404;
+  --s: calc(100vw * 0.4);
+  background:
+    repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 50%) 
+     calc(var(--s)/2) calc(var(--s)*tan(30deg)/2),
+    repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 50%);
+  background-size: var(--s) calc(var(--s)*tan(30deg));
 }
 main a:link {
   color: var(--color-highlight);
@@ -219,7 +228,7 @@ main a:active {
 }
 
 section:nth-child(odd) {
-  background: var(--color-dark-2);
+  background: rgba(20, 33, 61, 0.75);
 }
 .content {
   max-width: 1500px;
